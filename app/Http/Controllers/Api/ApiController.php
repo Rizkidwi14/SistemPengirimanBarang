@@ -16,9 +16,10 @@ class ApiController extends Controller
      */
     public function index()
     {
+        $message = "List Data Toko";
         $toko = Toko::all();
 
-        return new TokoResource(true, $toko);
+        return new TokoResource(true, $message, $toko);
     }
 
     /**
