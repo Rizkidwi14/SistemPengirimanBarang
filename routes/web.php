@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\LaporanController;
@@ -10,8 +11,11 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\SpamController;
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Http\Resources\UserCollection;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,7 +65,6 @@ Route::middleware('admin')->group(function () {
     Route::resource('/driver', DriverController::class);
 });
 Route::middleware('laporan')->group(function () {
-    // Route::middleware(['admin', 'manajer'])->group(function () {
     Route::get('/laporan/pengiriman', [LaporanController::class, 'laporanPengiriman']);
     Route::get('/laporan/pengiriman/cetak', [LaporanController::class, 'laporanPengirimanCetak']);
     Route::get('/laporan/pengiriman/cari', function () {
@@ -87,3 +90,5 @@ Route::middleware('toko')->group(function () {
     Route::get('/laporan/store/{pengiriman}', [LaporanController::class, 'detailPengiriman']);
     Route::post('/store/{pengiriman}', [StoreController::class, 'konfirmasi']);
 });
+
+route::apiResource('/restapi', ApiController::class);
