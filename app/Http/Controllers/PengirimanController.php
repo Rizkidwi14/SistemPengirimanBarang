@@ -9,11 +9,7 @@ use App\Models\Barang;
 use Illuminate\Http\Request;
 use Illuminate\Support\HtmlString;
 use App\Http\Requests\UpdatePengirimanRequest;
-use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Gate;
-use PhpParser\Node\Expr\Cast\Unset_;
-use PHPUnit\Framework\Constraint\Count;
 use Svg\Tag\Rect;
 
 use function PHPUnit\Framework\isNull;
