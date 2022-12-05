@@ -13,10 +13,10 @@
     <div class="row ">
         <div class="col">
             <h1>{{ $title }}</h1>
+            {{-- Button Tambah Stock --}}
             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalTambah">
                 Tambah Barang
             </button>
-            <a href="/barang/riwayat" class="btn btn-primary btn-sm">Riwayat Perubahan Stok</a>
 
             {{-- Modal Tambah Stok --}}
             <div class="modal fade" id="modalTambah" tabindex="-1" aria-labelledby="modalTambahLabel" aria-hidden="true">
@@ -26,7 +26,7 @@
                             <h5 class="modal-title" id="modalTambahLabel">Tambah Data Barang</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="/barang" method="POST">
+                        <form action="{{ route('barang.store') }}" method="POST">
                             @csrf
                             <div class="modal-body">
                                 <div class="mb-2">
@@ -55,6 +55,7 @@
                 </div>
             </div>
 
+            <a href="/barang/riwayat" class="btn btn-primary btn-sm">Riwayat Perubahan Stok</a>
 
         </div>
     </div>

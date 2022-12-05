@@ -12,6 +12,8 @@ class SpamController extends Controller
 {
     public function index()
     {
+
+        // dd(action([PengirimanController::class, 'index']));
         $kodeToko = Toko::max('kode_toko');
         $kodeToko++;
         for ($i = 1; $i <= 12; $i++) {

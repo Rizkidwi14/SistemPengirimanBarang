@@ -10,19 +10,19 @@
                     Dashboard
                 </a>
                 @can('admin')
-                    <a href="/barang" class="nav-link {{ Request::is('barang*') ? 'active' : '' }}">
+                    <a href="{{ route('barang.index') }}" class="nav-link {{ Request::is('barang*') ? 'active' : '' }}">
                         <div class="sb-nav-link-icon">
                             <i class="bi bi-box-seam"></i>
                         </div>
                         Barang
                     </a>
-                    <a href="/toko" class="nav-link {{ Request::is('toko*') ? 'active' : '' }}">
+                    <a href="{{ route('toko.index') }}" class="nav-link {{ Request::is('toko*') ? 'active' : '' }}">
                         <div class="sb-nav-link-icon">
                             <i class="pe-1 bi bi-building"></i>
                         </div>
                         Toko
                     </a>
-                    <a href="/driver" class="nav-link {{ Request::is('driver*') ? 'active' : '' }}">
+                    <a href="{{ route('driver.index') }}" class="nav-link {{ Request::is('driver*') ? 'active' : '' }}">
                         <div class="sb-nav-link-icon">
                             <i class="pe-1 bi bi-person"></i>
                         </div>
